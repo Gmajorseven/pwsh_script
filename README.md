@@ -16,3 +16,8 @@ Before proceeding, ensure you have:
 
    ```powershell
    Install-Module -Name BcContainerHelper -Force
+
+### 2. Running a script
+   
+   ```powershell
+   .\bcserversetup.ps1
