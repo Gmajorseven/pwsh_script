@@ -4,14 +4,14 @@ $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
 $credential = New-Object pscredential 'admin', $securePassword
 $auth = 'UserPassword'
 $artifactUrl = Get-BcArtifactUrl -type 'OnPrem' -version '15.4.41023.41345' -country 'na' -select 'Closest'
-# -type and -version Pending on your setup
+
 New-BcContainer `
     -accept_eula `
     -containerName $containerName `
     -credential $credential `
     -auth $auth `
     -artifactUrl $artifactUrl `
-    -memoryLimit 6G ` # Pending on your hardware
+    -memoryLimit 6G `
     -includeAL -doNotExportObjectsToText `
     -vsixFile (Get-LatestAlLanguageExtensionUrl) `
     -updateHosts `
